@@ -18,5 +18,4 @@ Route::get('/top', 'App\Http\Controllers\TopController');
 
 Route::get('/bootstrap', function () {
   return view('bootstrap');
-  
 });
