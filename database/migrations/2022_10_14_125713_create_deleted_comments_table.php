@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('deleted_comments', function (Blueprint $table) {
           $table->bigIncrements('id');
-          $table->string('email', 255)->unique()->index();
-          $table->string('password', 255);
-          $table->string('nickname', 20)->nullable();
-          $table->string('icon_image_path', 255)->nullable();
+          $table->integer('commenter_id');
+          $table->integer('guests_commenter_id');
+          $table->integer('thread_id');
+          $table->integer('comment_number');
+          $table->string('content', 1000);
           $table->timestamps();
+          $table->dateTime('deleted_at');
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('deleted_comments');
     }
 };
