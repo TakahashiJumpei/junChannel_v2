@@ -29,8 +29,7 @@ class CategoryController extends Controller
       $query->select(DB::raw('MAX(id) As id'))->from('comments')->groupBy('thread_id');
     })->get();
     Log::info('$recently_commentsaaa', [$recently_comments]);
-    //各スレッド最新のコメントデータを取得できている。ここまではOK
-    //dd($recently_comments);
+    //NOTE:コメントテーブルにコメントが存在しない場合に、後続の処理でエラーとなる
 
     $thread_ids = array();
     foreach ($recently_comments as $recently_comment) {
@@ -59,8 +58,6 @@ class CategoryController extends Controller
       $flag++;
     }
     Log::info('$flag', [$flag]);
-
-    //$recently_commented_threads = null;
 
     //ここまででコメントがなされている検索条件に合うスレッド一覧が取得できた
     //ここからはコメントされていないかつ検索条件に合うスレッド一覧をスレッド作成順に取得する
@@ -98,7 +95,6 @@ class CategoryController extends Controller
 
   public function search(Request $request)
   {
-    //dd($request);
     // DBからすべてのカテゴリを取得
     $categories = Category::get();
     if ($categories->isEmpty()) {
@@ -194,7 +190,6 @@ class CategoryController extends Controller
       $categories = null;
     }
     Log::info('$categories', [$categories]);
-    //dd($categories);
 
     return view('category.list', compact('categories'));
   }
