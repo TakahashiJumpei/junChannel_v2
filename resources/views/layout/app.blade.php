@@ -8,6 +8,19 @@
     <title>@yield('title')</title>
     <link rel="icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="じゅんちゃんねる" />
+    <meta property="og:url" content="https://junchannel.herokuapp.com/" />
+    <meta property="og:site_name" content="JunChannel" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta
+      property="og:description"
+      name="description"
+      content="じゅんちゃんねるは某有名掲示板を真似た匿名掲示板です。スレッドでのコメントを通じて趣味が合う者同士（雑談でも何でもOK）の楽しい交流の場としてご利用ください。"
+    />
+    <meta property="og:image" content="https://junchannel.herokuapp.com/favicon.ico" />
+
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
