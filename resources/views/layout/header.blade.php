@@ -16,22 +16,23 @@
                             <a class="nav-link active" href="{{ url('thread/post') }}">スレッドの作成</a>
                         </li>
                     </ul>
-                    {!! Form::open([
-                        'url' => '/search',
-                        'method' => 'get',
-                        'files' => true,
-                        'class' => 'd-flex form-inline my-2 my-lg-0',
-                    ]) !!}
-                    {!! Form::search('str', $str ?? '', [
-                        'class' => 'form-control me-sm-2',
-                        'placeholder' => 'スレッドの検索',
-                    ]) !!}
-                    {!! Form::button('検索', [
-                        'class' => 'btn btn-outline-light my-2 my-sm-0',
-                        'type' => 'submit',
-                    ]) !!}
-                    {!! Form::close() !!}
-                    <ul class="navbar-nav mb-2 mb-lg-0">
+                    <ul class="navbar-nav">
+                        {!! Form::open([
+                            'url' => '/search',
+                            'method' => 'get',
+                            'files' => true,
+                            'class' => 'd-flex',
+                        ]) !!}
+                        {!! Form::search('str', $str ?? '', [
+                            'class' => 'form-control me-2',
+                            'placeholder' => 'スレッドの検索',
+                        ]) !!}
+                        {!! Form::button('検索', [
+                            'class' => 'btn btn-outline-light',
+                            'type' => 'submit',
+                        ]) !!}
+                        {!! Form::close() !!}
+
                         @if (Auth::guard('user')->check())
                             <?php $user = Auth::guard('user')->user(); ?>
                             <li class="nav-item ms-2">
@@ -69,6 +70,12 @@
         @media screen and (min-width:450px) {
             input {
                 width: 350px !important;
+            }
+        }
+
+        @media screen and (max-width:400px) {
+            input {
+                width: 250px !important;
             }
         }
     </style>
