@@ -15,16 +15,12 @@ class CategoryController extends Controller
   {
     $category = Category::find($categoryId);
     Log::info('$category', [$category]);
-
-    //dd($category);
-
     // DBからすべてのカテゴリを取得
     $categories = Category::get();
     if ($categories->isEmpty()) {
       $categories = null;
     }
     Log::info('$categories', [$categories]);
-    //dd($categories);
 
     //DBからスレッドを最近コメントされた順にソートして取得
     //まずコメントテーブルからコメントを外部キーであるスレッドテーブルIDが重複しないように１０件取得する。
@@ -32,7 +28,9 @@ class CategoryController extends Controller
     $recently_comments = Comment::orderBy('id', 'DESC')->whereIn('id', function ($query) {
       $query->select(DB::raw('MAX(id) As id'))->from('comments')->groupBy('thread_id');
     })->get();
-    Log::info('$recently_comments', [$recently_comments]);
+    Log::info('$recently_commentsaaa', [$recently_comments]);
+    //各スレッド最新のコメントデータを取得できている。ここまではOK
+    dd($recently_comments);
 
     $thread_ids = array();
     foreach ($recently_comments as $recently_comment) {
@@ -61,6 +59,8 @@ class CategoryController extends Controller
       $flag++;
     }
     Log::info('$flag', [$flag]);
+
+    //$recently_commented_threads = null;
 
     //ここまででコメントがなされている検索条件に合うスレッド一覧が取得できた
     //ここからはコメントされていないかつ検索条件に合うスレッド一覧をスレッド作成順に取得する
