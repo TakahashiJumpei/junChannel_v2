@@ -66,5 +66,9 @@
         .form-group input {
             width: 100% !important;
         }
+        
+        .form-control {
+            background-color: #ffffff;
+        }
     </style>
 @endsection

@@ -100,6 +100,10 @@
             width: 100% !important;
         }
 
+        .form-control {
+            background-color: #ffffff;
+        }
+
         @media screen and (max-width:450px) {
 
             table {

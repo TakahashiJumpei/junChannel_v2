@@ -159,6 +159,10 @@
             font-size: 16px;
         }
 
+        .form-control {
+            background-color: #ffffff;
+        }
+
         @media screen and (max-width:450px) {
 
             .thread-title .card-body .card-title {
