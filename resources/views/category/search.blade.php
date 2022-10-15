@@ -15,7 +15,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <a class="card-title font-weight-bold h3 text-dark"
+                        <a class="card-title font-weight-bold h3 text-dark text-decoration-none"
                             href="{{ url('category/show', $category->id) }}">{{ $category->name }}</a>
                         @if ($concatenated_threads_count)
                             <span class="card-text join-category">全{{ $concatenated_threads_count }}件</span>
@@ -30,11 +30,11 @@
                                 'url' => 'category/search',
                                 'method' => 'get',
                                 'files' => true,
-                                'class' => 'form-inline ml-lg-3 my-2 my-lg-0',
+                                'class' => 'd-flex form-inline ms-lg-3 my-2 my-lg-0',
                             ]) !!}
                             {!! Form::hidden('categoryId', $category->id) !!}
                             {!! Form::search('q', $q ?? '', [
-                                'class' => 'form-control mr-2 category-search',
+                                'class' => 'form-control me-2 category-search',
                                 'placeholder' => 'カテゴリ内スレッド検索',
                             ]) !!}
                             {!! Form::button('検索', [
@@ -82,21 +82,21 @@
                                 {{-- 所属するカテゴリも表示させる --}}
                                 <td class="d-flex justify-content-start align-items-center">
                                     <div>
-                                        <span class="ml-2">[{{ $loop->index + 1 }}]</span>
+                                        <span class="ms-2">[{{ $loop->index + 1 }}]</span>
                                     </div>
                                     <div class="d-md-flex justify-content-start align-items-center">
                                         <div>
                                             <a href="{{ url('thread/show', $concatenated_thread->id) }}"
-                                                class="btn btn-link">{{ $concatenated_thread->name }}</a>
+                                                class="btn btn-link text-decoration-none">{{ $concatenated_thread->name }}</a>
                                         </div>
                                         <div>
                                             @if (isset($concatenated_thread->count_comment))
-                                                <span class="ml-2">（{{ $concatenated_thread->count_comment }}件）</span>
+                                                <span class="ms-2">（{{ $concatenated_thread->count_comment }}件）</span>
                                             @else
-                                                <span class="ml-2">（0件）</span>
+                                                <span class="ms-2">（0件）</span>
                                             @endif
                                             @if (isset($concatenated_thread->recently_comment_datetime))
-                                                <span class="ml-2">
+                                                <span class="ms-2">
                                                     {{ $concatenated_thread->recently_comment_datetime->format('m月d日 H:i') }}
                                                 </span>
                                             @else
