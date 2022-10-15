@@ -7,7 +7,7 @@
 
 @section('content')
 
-    {{-- @include('layout.categories_list') --}}
+    @include('layout.categories_list')
 
     <div class="col-lg-9">
 
@@ -25,7 +25,7 @@
 
         {{-- 最近作成されたスレッド一覧の表示 --}}
         {{-- 最近作成された最新１０件のスレッドを最新順に一覧表示する --}}
-        {{-- <div class="mt-5 mb-5">
+        <div class="mt-5 mb-5">
             <table class="table">
                 <thead class="table-bordered table-sm thead-light">
                     <tr>
@@ -74,10 +74,10 @@
                     @endif
                 </tbody>
             </table>
-        </div> --}}
+        </div>
 
         {{-- スレッドランキング（勢いのあるスレッド）の表示。コメントが最新のスレッド順に一覧表示 --}}
-        {{-- <div class="mt-5 mb-5">
+        <div class="mt-5 mb-5">
             <table class="table">
                 <thead class="table-bordered table-sm thead-light">
                     <tr>
@@ -123,7 +123,7 @@
                     @endif
                 </tbody>
             </table>
-        </div> --}}
+        </div>
 
         {{-- ※必要に応じて「もっと見る」で各種、別画面でもっと多い件数を表示させる --}}
 
