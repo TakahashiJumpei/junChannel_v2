@@ -52,13 +52,13 @@
                             <h4 class="font-weight-bold mb-4">
                                 {{-- <a href="#" class="mr-3 link-primary">#{{ $comment->comment_number }}</a> --}}
                                 {{-- ↑コメント引用機能のための改修をDB側に搭載できれば差し替える --}}
-                                <span class="mr-3 link-primary">#{{ $comment->comment_number }}</span>
+                                <span class="me-3">#{{ $comment->comment_number }}</span>
                                 @if ($comment->guests_commenter_id === 'notGuest')
-                                    <span class="mr-3">{{ $comment->commenter_nickname }}</span>
+                                    <span class="me-3">{{ $comment->commenter_nickname }}</span>
                                 @else
-                                    <span class="mr-3">名無しさん</span>
+                                    <span class="me-3">名無しさん</span>
                                 @endif
-                                <span class="mr-3">{{ $comment->created_at }}</span>
+                                <span class="me-3">{{ $comment->created_at }}</span>
                                 @if ($loop->last)
                                     <span class="font-weight-normal text-secondary">（最新コメント）</span>
                                 @endif

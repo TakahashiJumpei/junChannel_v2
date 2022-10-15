@@ -22,14 +22,14 @@
                                 <tr class="active">
                                     <td>
                                         <a href="{{ url('category/show', $category->id) }}"
-                                            class="btn btn-link">{{ $category->name }}</a>
+                                            class="btn btn-link text-decoration-none">{{ $category->name }}</a>
                                     </td>
                                 </tr>
                             @else
                                 <tr>
                                     <td>
                                         <a href="{{ url('category/show', $category->id) }}"
-                                            class="btn btn-link">{{ $category->name }}</a>
+                                            class="btn btn-link text-decoration-none">{{ $category->name }}</a>
                                     </td>
                                 </tr>
                             @endif
@@ -61,7 +61,7 @@
         }
 
         tr.active td .btn-link:hover {
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .side-bar {

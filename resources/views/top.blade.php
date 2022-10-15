@@ -45,7 +45,7 @@
                                     <div class="d-md-flex justify-content-start align-items-center">
                                         <div>
                                             <a href="{{ url('thread/show', $recently_created_thread->id) }}"
-                                                class="btn btn-link">{{ $recently_created_thread->name }}</a>
+                                                class="btn btn-link text-decoration-none">{{ $recently_created_thread->name }}</a>
                                         </div>
                                         <div>
                                             <span class="ml-2">（{{ $recently_created_thread->count_comment }}件）</span>
@@ -57,7 +57,7 @@
                                             @endif
                                             <span class="ml-3 td-category">
                                                 [ <a
-                                                    href="{{ url('category/show', $recently_created_thread->category_id) }}">{{ $recently_created_thread->category_name }}</a>
+                                                    href="{{ url('category/show', $recently_created_thread->category_id) }}" class="text-decoration-none">{{ $recently_created_thread->category_name }}</a>
                                                 ]
                                             </span>
                                         </div>

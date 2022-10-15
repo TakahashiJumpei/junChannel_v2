@@ -15,7 +15,7 @@
                     @foreach ($categories as $category)
                         <div class="col-sm-6 col-lg-4">
                             <span class="ml-2">[{{ $loop->index + 1 }}]</span>
-                            <a href="{{ url('category/show', $category->id) }}" class="btn btn-link text-decoration-none">{{ $category->name }}</a>
+                            <a href="{{ url('category/show', $category->id) }}" class="btn btn-link text-decoration-none category-list-item">{{ $category->name }}</a>
                         </div>
                     @endforeach
                 </div>
@@ -40,7 +40,7 @@
                                     <div class="d-md-flex justify-content-start align-items-center">
                                         <div>
                                             <a href="{{ url('category/show', $category->id) }}"
-                                                class="btn btn-link">{{ $category->name }}</a>
+                                                class="btn btn-link text-decoration-none category-list-item">{{ $category->name }}</a>
                                         </div>
                                     </div>
                                 </td>
@@ -54,9 +54,8 @@
     </div>
 
     <style>
-        a.text-dark:hover {
-            color: #ccc !important;
-            text-decoration: none;
+        a.category-list-item:hover {
+            text-decoration: underline !important;
         }
 
         table {

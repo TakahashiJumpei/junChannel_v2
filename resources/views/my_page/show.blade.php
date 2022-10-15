@@ -67,24 +67,24 @@
                             <tr>
                                 <td class="d-flex justify-content-start align-items-center">
                                     <div>
-                                        <span class="ml-2">[{{ $loop->index + 1 }}]</span>
+                                        <span class="ms-2">[{{ $loop->index + 1 }}]</span>
                                     </div>
                                     <div class="d-md-flex justify-content-start align-items-center">
                                         <div>
                                             <a href="{{ url('thread/show', $created_thread->id) }}"
-                                                class="btn btn-link">{{ $created_thread->name }}</a>
+                                                class="btn btn-link text-decoration-none">{{ $created_thread->name }}</a>
                                         </div>
                                         <div>
-                                            <span class="ml-2">（{{ $created_thread->count_comment }}件）</span>
+                                            <span class="ms-2">（{{ $created_thread->count_comment }}件）</span>
                                             @if (isset($created_thread->recently_comment_datetime))
-                                                <span class="ml-2">
+                                                <span class="ms-2">
                                                     {{ $created_thread->recently_comment_datetime->format('m月d日 H:i') }}
                                                 </span>
                                             @else
                                             @endif
-                                            <span class="ml-3 td-category">
+                                            <span class="ms-3 td-category">
                                                 [ <a
-                                                    href="{{ url('category/show', $created_thread->category_id) }}">{{ $created_thread->category_name }}</a>
+                                                    href="{{ url('category/show', $created_thread->category_id) }}" class="text-decoration-none">{{ $created_thread->category_name }}</a>
                                                 ]
                                             </span>
                                         </div>
@@ -118,24 +118,24 @@
                             <tr>
                                 <td class="d-flex justify-content-start align-items-center">
                                     <div>
-                                        <span class="ml-2">[{{ $loop->index + 1 }}]</span>
+                                        <span class="ms-2">[{{ $loop->index + 1 }}]</span>
                                     </div>
                                     <div class="d-md-flex justify-content-start align-items-center">
                                         <div>
                                             <a href="{{ url('thread/show', $commented_thread->id) }}"
-                                                class="btn btn-link">{{ $commented_thread->name }}</a>
+                                                class="btn btn-link text-decoration-none">{{ $commented_thread->name }}</a>
                                         </div>
                                         <div>
-                                            <span class="ml-2">（{{ $commented_thread->count_comment }}件）</span>
+                                            <span class="ms-2">（{{ $commented_thread->count_comment }}件）</span>
                                             @if (isset($commented_thread->recently_comment_datetime))
-                                                <span class="ml-2">
+                                                <span class="ms-2">
                                                     {{ $commented_thread->recently_comment_datetime->format('m月d日 H:i') }}
                                                 </span>
                                             @else
                                             @endif
-                                            <span class="ml-3 td-category">
+                                            <span class="ms-3 td-category">
                                                 [ <a
-                                                    href="{{ url('category/show', $commented_thread->category_id) }}">{{ $commented_thread->category_name }}</a>
+                                                    href="{{ url('category/show', $commented_thread->category_id) }}" class="text-decoration-none">{{ $commented_thread->category_name }}</a>
                                                 ]
                                             </span>
                                         </div>
