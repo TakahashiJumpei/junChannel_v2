@@ -39,7 +39,7 @@ class CategoryController extends Controller
       Log::info('$recently_comment->thread_id', [$recently_comment->thread_id]);
       $thread_ids[] = $recently_comment->thread_id;
     }
-    $recently_commented_threads = Thread::where('category_id', $categoryId)->whereIn('id', $thread_ids)->orderByRaw("FIELD(id, " . implode(",", $thread_ids) . ")")->take(10)->get();
+    $recently_commented_threads = Thread::where('category_id', $categoryId)->whereIn('id', $thread_ids)->orderByRaw('FIELD(id, ' . implode(',', $thread_ids) . ')')->take(10)->get();
     Log::info('$recently_commented_threads', [$recently_commented_threads]);
     $recently_commented_threads_count = Thread::where('category_id', $categoryId)->whereIn('id', $thread_ids)->orderByRaw('FIELD(id, ' . implode(',', $thread_ids) . ')')->take(10)->get()->count();
     Log::info('$recently_commented_threads_count', [$recently_commented_threads_count]);
