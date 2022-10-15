@@ -30,7 +30,7 @@ class CategoryController extends Controller
     })->get();
     Log::info('$recently_commentsaaa', [$recently_comments]);
     //各スレッド最新のコメントデータを取得できている。ここまではOK
-    dd($recently_comments);
+    //dd($recently_comments);
 
     $thread_ids = array();
     foreach ($recently_comments as $recently_comment) {
